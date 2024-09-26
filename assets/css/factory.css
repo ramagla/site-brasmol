@@ -1,0 +1,119 @@
+/* factory.css */
+
+/* Estilo da Seção da Fábrica */
+.card-container {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte se não houver espaço */
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 250px; /* Largura dos cards ajustada */
+  height: 300px; /* Altura dos cards ajustada */
+  perspective: 1000px; /* Adiciona efeito 3D */
+  margin: 10px; /* Espaçamento ao redor dos cards */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Efeito de flip ao passar o mouse */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ddd; /* Adiciona uma borda leve ao redor do card */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+}
+
+.flip-card-front {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.flip-card-front img {
+  max-width: 80%; /* Ajusta a imagem para caber melhor no card */
+  max-height: 80%; /* Mantém a proporção da imagem */
+  object-fit: contain; /* Ajusta a imagem sem distorcer */
+}
+
+.flip-card-back {
+  background-color: #004268; /* Cor do fundo do verso do card */
+  color: white; /* Cor do texto no verso do card */
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.flip-card-back h2 {
+  margin: 0 0 10px 0;
+  font-size: 16px; /* Ajusta o tamanho do título */
+}
+
+.flip-card-back p {
+  margin: 0;
+  font-size: 14px; /* Ajusta o tamanho do texto */
+}
+
+.flip-card-back img.icons {
+  max-width: 40px; /* Ajusta o tamanho da imagem do ícone */
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 200px; /* Ajusta a largura dos cards em dispositivos menores */
+    height: 250px; /* Ajusta a altura dos cards em dispositivos menores */
+  }
+
+  .flip-card-back h2 {
+    font-size: 14px; /* Ajusta o tamanho do título em dispositivos menores */
+  }
+
+  .flip-card-back p {
+    font-size: 12px; /* Ajusta o tamanho do texto em dispositivos menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card {
+    width: 100%; /* Os cards ocupam a largura total do contêiner em dispositivos muito pequenos */
+    height: auto; /* Altura automática para evitar cortes */
+  }
+
+  .flip-card-inner {
+    height: auto; /* Altura automática do card interno */
+  }
+
+  .flip-card-back h2 {
+    font-size: 12px; /* Ajusta o tamanho do título em telas muito pequenas */
+  }
+
+  .flip-card-back p {
+    font-size: 10px; /* Ajusta o tamanho do texto em telas muito pequenas */
+  }
+}

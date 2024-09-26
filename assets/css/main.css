@@ -1,0 +1,22 @@
+.image-name {
+    margin-top: 5px; /* Espaço entre a imagem e o nome */
+    font-size: 14pt; /* Tamanho da fonte para o nome */
+    color: #333333; /* Cor cinza escuro */
+    text-align: center; /* Centraliza o texto */
+}
+
+.carousel-indicators button {
+    background-color: #e15f41; /* Cor dos botões de indicador */
+    border-radius: 50%; /* Botões arredondados */
+    width: 12px; /* Tamanho do botão */
+    height: 12px; /* Tamanho do botão */
+}
+
+.carousel-indicators .active {
+    background-color: #f666c5; /* Cor do botão ativo */
+}
+
+.carousel-indicators button:hover {
+    background-color: #d9534f; /* Cor do botão ao passar o mouse */
+}
+

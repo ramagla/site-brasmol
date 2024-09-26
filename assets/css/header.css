@@ -1,0 +1,62 @@
+/* assets/css/header.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: #87CEEB; /* Azul claro */
+}
+
+#cabecalho .nav .nav-link.active {
+    background-color: #fff;
+    color: #e15f41; /* Cor do texto ativo */
+}
+
+#cabecalho .nav .nav-link,
+.navbar-brand,
+.navbar-brand:hover {
+    color: #fff; /* Cor do texto */
+}
+
+.navbar-toggler {
+    background-color: #ffeae6; /* Cor do botão do menu */
+}
+
+.section-title {
+    font-family: 'Pacifico', cursive; /* Fonte para o título */
+}
+
+
+.text-colored {
+    color: #e15f41; /* Cor personalizada */
+}
+
+.nav-cardapio .nav-link.active,
+#contato button {
+    background-color: #e15f41; /* Cor do botão ativo */
+    color: #fff;
+}
+
+.nav-cardapio .nav-link:hover {
+    color: #e15f41; /* Cor ao passar o mouse */
+}
+
+.social-links li {
+    list-style: none;
+    display: inline; /* Exibir links sociais em linha */
+}
+
+.social-links a {
+    text-decoration: none; /* Remover sublinhado */
+}
+
+#logo-header {
+    width: 100px; /* Definindo a largura do logo */
+}
+
+@media (max-width: 767px) {
+    .carousel-item img {
+        height: 280px; /* Altura da imagem do carrossel */
+    }
+}

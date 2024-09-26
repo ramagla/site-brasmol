@@ -1,0 +1,53 @@
+/* section-quality.css */
+
+/* Estilo da Seção de Qualidade */
+.quality-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.clientes {
+    text-align: center; /* Centraliza o texto da seção */
+}
+
+.arraste {
+    margin-bottom: 20px; /* Espaço entre o texto e as imagens */
+}
+
+.watch-slider {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+    gap: 10px;
+}
+
+.watch-slider .slide {
+    flex: 0 0 auto;
+    max-width: 400px; /* Ajustar o tamanho máximo das imagens */
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.watch-slider img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Ajuste apenas para dispositivos móveis */
+@media (max-width: 768px) {
+    img {
+        width: auto; /* Permite que a largura das imagens se ajuste automaticamente */
+        max-width: 100%; /* Garante que as imagens não excedam a largura do seu contêiner */
+        height: auto; /* Mantém a proporção das imagens */
+    }
+
+    .watch-slider .slide {
+        max-width: 150%; /* Ajusta a largura dos slides conforme necessário */
+    }
+}
+

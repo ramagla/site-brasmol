@@ -1,0 +1,152 @@
+/* footer.css */
+
+/* Estilos Gerais do Rodapé */
+footer {
+  background-color: #02165b; /* Cor de fundo do rodapé */
+  color: #ffffff; /* Cor do texto */
+  padding: 40px 10%; /* Espaçamento interno */
+  font-size: 14px; /* Tamanho da fonte */
+  width: 100%;
+  text-align: left; /* Alinhamento do texto */
+  border: none;
+}
+
+footer ol {
+  list-style: none; /* Remove as marcações da lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between; /* Ajusta a distribuição das colunas */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  border: none;
+}
+
+footer ol li {
+  margin: 0;
+  flex: 1;
+  min-width: 200px; /* Largura mínima das colunas */
+  margin-bottom: 20px; /* Espaçamento inferior */
+  border: none;
+}
+
+footer ol li h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 1px solid #ffffff; /* Adiciona uma linha abaixo do título */
+  padding-bottom: 5px;
+  border: none;
+}
+
+footer ol li a {
+  color: #d0d0d0; /* Cor dos links */
+  text-decoration: none;
+  display: block; /* Links em bloco */
+  margin-bottom: 5px;
+  font-weight: normal;
+  transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+footer ol li a:hover {
+  color: #ffffff; /* Cor ao passar o mouse */
+}
+
+/* Estilos das Redes Sociais */
+footer .social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px; /* Espaçamento entre os ícones */
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  margin-right: 10px;
+}
+
+footer .social-icons img {
+  width: 25px; /* Tamanho dos ícones */
+  height: auto;
+  transition: transform 0.3s ease; /* Transição ao passar o mouse */
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+/* Estilos do Botão WhatsApp */
+footer .wpp {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #4caf50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+footer .wpp svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+}
+
+footer .wpp:hover {
+  background: #3e8e41; /* Cor de fundo ao passar o mouse */
+}
+
+/* Logo no final do rodapé */
+footer #logo2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+footer #logo2 img {
+  width: 120px;
+  height: auto;
+}
+
+footer .end {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+footer .end a,
+footer .end p {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer .end a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  footer ol {
+    flex-direction: column; /* Colunas empilhadas em telas menores */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  footer ol li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  footer .social-icons {
+    justify-content: center; /* Centraliza os ícones de redes sociais */
+  }
+
+  footer .wpp {
+    position: relative; /* Ajusta a posição do botão WhatsApp */
+    margin: 0 auto;
+  }
+}

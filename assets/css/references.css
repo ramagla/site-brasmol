@@ -1,0 +1,70 @@
+/* references.css */
+
+/* Estilos Básicos da Seção */
+.referencias {
+  padding: 40px 0; /* Espaçamento interno da seção */
+  text-align: center; /* Centraliza o título */
+  background-color: #f9f9f9; /* Cor de fundo */
+}
+
+.referencias h2 {
+  font-size: 24px;
+  color: #02165b;
+  margin-bottom: 30px; /* Adiciona um espaçamento abaixo do título */
+  font-weight: bold;
+}
+
+/* Carrossel de Logotipos (Slick Carousel) */
+.logo-carousel {
+  width: 80%; /* Largura do carrossel */
+  margin: 0 auto; /* Centraliza o carrossel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px; /* Espaçamento entre os logos */
+}
+
+.logo-carousel div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo-carousel img {
+  max-width: 150px; /* Tamanho máximo das imagens */
+  height: auto; /* Mantém a proporção das imagens */
+  transition: transform 0.3s ease-in-out; /* Transição suave ao passar o mouse */
+}
+
+.logo-carousel img:hover {
+  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Ocultando os botões padrão do slick-carousel */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo-carousel img {
+    max-width: 100px; /* Ajusta o tamanho das imagens em dispositivos menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-carousel {
+    flex-direction: column; /* Organiza os logos em uma única coluna */
+  }
+
+  .logo-carousel div {
+    margin: 5px 0;
+  }
+
+  .referencias h2 {
+    font-size: 18px;
+  }
+}
