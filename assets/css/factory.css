@@ -1,20 +1,19 @@
-/* factory.css */
-
 /* Estilo da Seção da Fábrica */
 .card-container {
   margin-top: 40px;
   display: flex;
-  gap: 20px; /* Espaçamento entre os cards */
-  justify-content: center; /* Centraliza os cards */
-  flex-wrap: wrap; /* Permite que os cards quebrem para a linha seguinte se não houver espaço */
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+/* Flip Card */
 .flip-card {
   background-color: transparent;
-  width: 250px; /* Largura dos cards ajustada */
-  height: 300px; /* Altura dos cards ajustada */
-  perspective: 1000px; /* Adiciona efeito 3D */
-  margin: 10px; /* Espaçamento ao redor dos cards */
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
 }
 
 .flip-card-inner {
@@ -26,7 +25,7 @@
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg); /* Efeito de flip ao passar o mouse */
+  transform: rotateY(180deg);
 }
 
 .flip-card-front,
@@ -35,9 +34,9 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border: 1px solid #ddd; /* Adiciona uma borda leve ao redor do card */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .flip-card-front {
@@ -50,14 +49,14 @@
 }
 
 .flip-card-front img {
-  max-width: 80%; /* Ajusta a imagem para caber melhor no card */
-  max-height: 80%; /* Mantém a proporção da imagem */
-  object-fit: contain; /* Ajusta a imagem sem distorcer */
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
 }
 
 .flip-card-back {
-  background-color: #004268; /* Cor do fundo do verso do card */
-  color: white; /* Cor do texto no verso do card */
+  background-color: #004268;
+  color: white;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
@@ -69,51 +68,70 @@
 
 .flip-card-back h2 {
   margin: 0 0 10px 0;
-  font-size: 16px; /* Ajusta o tamanho do título */
+  font-size: 16px;
 }
 
 .flip-card-back p {
   margin: 0;
-  font-size: 14px; /* Ajusta o tamanho do texto */
+  font-size: 14px;
 }
 
 .flip-card-back img.icons {
-  max-width: 40px; /* Ajusta o tamanho da imagem do ícone */
+  max-width: 40px;
   height: auto;
   margin-top: 10px;
 }
 
-/* Responsividade */
+/* Responsividade para Tablets */
+/* Responsividade iniciando a partir de 768px */
 @media (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem linha quando não houver espaço */
+    justify-content: center; /* Centraliza os cards */
+    gap: 10px; /* Espaçamento entre os cards */
+    padding: 10px; /* Adiciona um padding ao redor da área de cards */
+  }
+
   .flip-card {
-    width: 200px; /* Ajusta a largura dos cards em dispositivos menores */
-    height: 250px; /* Ajusta a altura dos cards em dispositivos menores */
-  }
-
-  .flip-card-back h2 {
-    font-size: 14px; /* Ajusta o tamanho do título em dispositivos menores */
-  }
-
-  .flip-card-back p {
-    font-size: 12px; /* Ajusta o tamanho do texto em dispositivos menores */
-  }
-}
-
-@media (max-width: 480px) {
-  .flip-card {
-    width: 100%; /* Os cards ocupam a largura total do contêiner em dispositivos muito pequenos */
-    height: auto; /* Altura automática para evitar cortes */
+    width: 150px; /* Ajusta a largura dos cards para ficarem menores */
+    height: 200px; /* Ajusta a altura dos cards para ficarem menores */
+    margin: 5px; /* Adiciona um espaçamento entre os cards */
   }
 
   .flip-card-inner {
-    height: auto; /* Altura automática do card interno */
+    height: 100%; /* Garante que a altura interna ocupe o tamanho total do card */
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; /* Mantém a altura total */
+    padding: 10px;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .flip-card-front img {
+    max-width: 70%; /* Ajusta a imagem para caber melhor no card */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain;
   }
 
   .flip-card-back h2 {
-    font-size: 12px; /* Ajusta o tamanho do título em telas muito pequenas */
+    font-size: 14px; /* Ajusta o tamanho do título */
+    margin: 5px 0;
   }
 
   .flip-card-back p {
-    font-size: 10px; /* Ajusta o tamanho do texto em telas muito pequenas */
+    font-size: 12px; /* Ajusta o tamanho do texto */
+    margin: 0;
+    text-align: center;
   }
 }

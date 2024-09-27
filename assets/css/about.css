@@ -1,99 +1,173 @@
-/* about.css */
 .background-fabrica {
     background-color: #f0f8ff; /* Fundo claro */
     padding: 50px 0;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Espaçamento entre os cards */
-}
-
-.flip-card {
-    background-color: transparent;
-    width: 300px; /* Ajustar conforme necessário */
-    height: 350px; /* Ajustar conforme necessário */
-    perspective: 1000px;
-}
-
-.flip-card-inner {
+.main-container {
     position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+    width: 80%; /* Ajuste de acordo com sua preferência */
+    margin: 0 auto; /* Centraliza a linha do tempo */
 }
 
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
+/* Linha central da linha do tempo */
+.main-container::after {
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-
-.flip-card-front {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.flip-card-front img {
-    width: 100%; /* Preenche o card */
-    height: 70%; /* Ajuste conforme necessário */
-    object-fit: cover; /* Preenche o espaço sem distorção */
-}
-
-.year {
-    position: absolute;
-    top: 10px;
+    width: 4px;
+    background-color: #003366; /* Azul escuro para contrastar */
+    top: 0;
+    bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
-    background-color: #87CEEB; /* Cor de fundo do ano */
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: #272424; /* Cor do texto */
-    font-weight: bold; /* Texto em negrito */
+    margin-left: -2px;
 }
 
-.flip-card-back {
-    background-color: #87CEEB; /* Cor de fundo para o verso do card */
-    color: #272424; /* Texto em cinza escuro */
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.text-wrapper {
+    padding: 10px 40px;
+    position: relative;
+    width: 51%;
+    box-sizing: border-box;
+    margin: 50px 0;
 }
 
-.flip-card-back h2 {
-    margin: 0 0 10px 0;
+.text-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #003366; /* Azul escuro */
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
 }
 
-.flip-card-back p {
-    margin: 0;
+.left {
+    left: 0;
 }
 
-/* Media Queries para Responsividade */
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.content {
+    padding: 15px 15px 15px 17px;
+    background-color: #87CEEB; /* Azul claro para contrastar com o header */
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.content h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #212121;
+    letter-spacing: 1px;
+}
+
+.content p {
+    color: #333;
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.timeline-image {
+    width: 80%; /* Reduz a largura para 80% do contêiner */
+    max-width: 300px; /* Define uma largura máxima para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 10px; /* Espaço acima da imagem */
+    border-radius: 4px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    display: block; /* Garante que a imagem seja exibida como um bloco */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+#sobre-nos {
+    padding-top: 170px; /* Mantido do seu código */
+    scroll-margin-top: 80px; /* Ajuste para o tamanho do seu header */ /* Adicionado */
+}
+
+#sobre {    
+    margin-top: auto /* Compensando o deslocamento */
+}
+
+.timeline-image {
+    border: none; /* Remove qualquer borda */
+    box-shadow: none; /* Remove qualquer sombra */
+}
+
+/* Oculta os cards flip em todas as versões */
+.card-container {
+    display: none;
+}
+
+#sobre-nos {
+    scroll-margin-top: 100px; /* Ajuste para o tamanho do seu header */
+}
+
+/* Ajustes para a linha do tempo na versão mobile */
+/* Ajustes para a linha do tempo na versão mobile */
 @media (max-width: 768px) {
-    .card-container {
-        flex-direction: column; /* Alinha os cards em coluna em telas menores */
-        align-items: center; /* Centraliza os cards */
+    .main-container {        
+        width: 90%; /* Aumenta a largura para ocupar mais espaço na tela móvel */
+        padding: 0 10px; /* Ajusta o padding para melhor centralização */
     }
 
-    .flip-card {
-        width: 90%; /* Faz os cards ocuparem mais espaço em telas menores */
+    .main-container::after {
+        display: none; /* Mantém a linha central oculta na versão mobile */
+    }
+
+     .text-wrapper {
+        width: 100%; /* Garante que o texto ocupe a largura total da tela */
+        padding: 5px 10px; /* Ajusta o padding para um melhor espaçamento */
+        margin: 20px 0; /* Ajusta a margem para garantir um espaçamento adequado entre os itens */
+        position: relative;
+        left: 0; /* Garante que o item fique alinhado ao centro na versão mobile */
+    }
+
+    .text-wrapper::after {
+        display: none; /* Oculta o ponto de conexão na versão mobile */
+    }
+
+    .content {
+        padding: 10px; /* Mantém o padding do conteúdo */
+        background-color: #87CEEB; /* Mantém o fundo azul claro */
+        text-align: left; /* Alinha o texto à esquerda para melhor legibilidade */
+        font-size: 14px; /* Mantém o tamanho do texto */
+    }
+
+    .content h3 {
+        font-size: 16px; /* Aumenta um pouco o tamanho do título para melhor destaque */
+    }
+
+    .content p {
+        font-size: 14px; /* Ajusta o tamanho do texto para melhor legibilidade */
+    }
+
+    .timeline-image {
+        width: 45%; /* Ajusta o tamanho da imagem para aproveitar melhor a largura da tela */
+        max-width: 100px; /* Define uma largura máxima */
+        margin: 10px auto; /* Ajusta o espaçamento ao redor da imagem */
+        display: block; /* Garante que a imagem seja exibida como um bloco */
+    }
+    
+    /* Ajusta o título da sessão */
+   #sobre-nos {
+        padding-top: 80px; /* Mantém o ajuste para evitar que o título seja cortado */
+        scroll-margin-top: 80px; /* Ajusta o scroll para a altura do header na versão mobile */
+    }
+
+    .background-fabrica {
+        padding: 20px 0; /* Mantém o padding geral da seção */
+    }
+
+    .right {
+        left: 0; /* Remove o deslocamento dos elementos à direita */
     }
 }
+

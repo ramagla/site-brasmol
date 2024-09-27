@@ -1,5 +1,4 @@
 <!-- includes/section-factory.php -->
-<link rel="stylesheet" href="assets/css/factory.css">
 <div class="card-container fabrica">
     <!-- Card 1 -->
     <div class="flip-card">

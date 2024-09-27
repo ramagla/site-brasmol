@@ -1,22 +1,56 @@
-.image-name {
-    margin-top: 5px; /* Espaço entre a imagem e o nome */
-    font-size: 14pt; /* Tamanho da fonte para o nome */
-    color: #333333; /* Cor cinza escuro */
-    text-align: center; /* Centraliza o texto */
+/* Estilo da Seção Principal */
+.inicial {
+    text-align: center;
+    padding-bottom: 0px;
+    margin-top: 0px; /* Garante que não há margem superior */
 }
 
-.carousel-indicators button {
-    background-color: #e15f41; /* Cor dos botões de indicador */
-    border-radius: 50%; /* Botões arredondados */
-    width: 12px; /* Tamanho do botão */
-    height: 12px; /* Tamanho do botão */
+.inicial h1, .inicial h2 {
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
-.carousel-indicators .active {
-    background-color: #f666c5; /* Cor do botão ativo */
+.clientes {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.carousel-indicators button:hover {
-    background-color: #d9534f; /* Cor do botão ao passar o mouse */
+.arraste {
+    margin-bottom: 20px;
 }
 
+.watch-sld {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+    gap: 10px;
+}
+
+.watch-sld .slide {
+    flex: 0 0 auto;
+    max-width: 400px;
+    width: 100%;
+    /* Removendo a borda */
+    border: none; 
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.watch-sld img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.watch-sld .slide:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste apenas para dispositivos móveis */
+@media (max-width: 768px) {
+    .watch-sld .slide {
+        max-width: 80%;
+    }
+}

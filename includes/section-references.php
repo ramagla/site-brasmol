@@ -1,5 +1,6 @@
 <!-- includes/section-references.php -->
-<link rel="stylesheet" href="assets/css/references.css">
+
+
 <div class="referencias">
     <div class="container">
         <h2 class="titulo-principal">Nossas Referências</h2>

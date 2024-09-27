@@ -65,8 +65,8 @@ footer .social-icons a {
 }
 
 footer .social-icons img {
-  width: 25px; /* Tamanho dos ícones */
-  height: auto;
+  width: 30px; /* Define um tamanho fixo para os ícones */
+  height: 30px; /* Define a altura fixa para os ícones */
   transition: transform 0.3s ease; /* Transição ao passar o mouse */
 }
 
@@ -79,8 +79,8 @@ footer .wpp {
   position: fixed;
   right: 15px;
   bottom: 15px;
-  width: 50px;
-  height: 50px;
+  width: 70px; /* Aumenta o tamanho do botão */
+  height: 70px; /* Aumenta o tamanho do botão */
   border-radius: 50%;
   background: #4caf50;
   display: flex;
@@ -88,16 +88,38 @@ footer .wpp {
   align-items: center;
   cursor: pointer;
   transition: background 0.3s ease;
+  z-index: 999; /* Garante que o botão fique acima de outros elementos */
 }
 
 footer .wpp svg {
-  width: 30px;
-  height: 30px;
+  width: 40px; /* Aumenta o ícone do WhatsApp */
+  height: 40px;
   fill: #ffffff;
 }
 
 footer .wpp:hover {
   background: #3e8e41; /* Cor de fundo ao passar o mouse */
+}
+
+footer .wpp-text {
+  display: none; /* Inicialmente escondido */
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 14px;
+  position: absolute;
+  right: 80px; /* Ajusta a posição do texto em relação ao botão */
+  bottom: 25px; /* Ajusta a posição do texto em relação ao botão */
+  white-space: nowrap; /* Impede quebra de linha */
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Inicialmente invisível */
+}
+
+footer .wpp:hover .wpp-text {
+  display: block; /* Exibe o texto ao passar o mouse */
+  opacity: 1;
 }
 
 /* Logo no final do rodapé */
@@ -129,6 +151,31 @@ footer .end a:hover {
   text-decoration: underline;
 }
 
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.float:hover {
+  background-color: #128c7e; /* Cor ao passar o mouse */
+}
+
+.my-float {
+  margin-top: 16px;
+}
+
+
 /* Responsividade */
 @media (max-width: 768px) {
   footer ol {
@@ -145,8 +192,20 @@ footer .end a:hover {
     justify-content: center; /* Centraliza os ícones de redes sociais */
   }
 
-  footer .wpp {
-    position: relative; /* Ajusta a posição do botão WhatsApp */
-    margin: 0 auto;
+ .float {
+    width: 50px; /* Ajusta o tamanho para versão mobile */
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+  
+  .my-float {
+    margin-top: 12px;
+  }
+
+  footer .social-icons img {
+    width: 25px; /* Ajuste do tamanho dos ícones na versão mobile */
+    height: 25px; /* Ajuste da altura dos ícones na versão mobile */
   }
 }

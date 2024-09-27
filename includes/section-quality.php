@@ -1,6 +1,4 @@
 <!-- includes/section-quality.php -->
-<link rel="stylesheet" href="assets/css/quality.css">
-
 <section class="quality-section">
     <div class="clientes">
         <div class="arraste">
@@ -10,7 +8,7 @@
                 <img class="seta" src="assets/imagens/arrow_next.svg" alt="seta">
             </p>
         </div>
-        <div id="background" class="watch-sld">
+        <div class="background watch-sld">
             <img class="slide" src="assets/imagens/Bras-Mol.jpg" alt="Imagem 1">
             <img class="slide" src="assets/imagens/fabrica-metalurgica.jpg" alt="Imagem 2">
             <img class="slide" src="assets/imagens/qualidade2.jpg" alt="Imagem 3">

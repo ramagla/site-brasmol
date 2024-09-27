@@ -81,5 +81,22 @@ function expandImage(img) {
         document.body.appendChild(expandedImg); // Adiciona a imagem ao corpo do documento
     }
 
-  
+
+  $(document).ready(function() {
+    // Adiciona a classe 'active' ao link do menu quando é clicado
+    $('.nav-link').on('click', function() {
+      $('.nav-link').removeClass('active');
+      $(this).addClass('active');
+    });
+
+    // Aplica a classe 'active' ao link correspondente ao carregar a página
+    var currentLocation = window.location.href;
+    $('.nav-link').each(function() {
+      if (this.href === currentLocation) {
+        $(this).addClass('active');
+      }
+    });
+  });
+
+
 
