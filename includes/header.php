@@ -7,16 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bras-Mol</title>
+  <meta name="description" content="Bras-Mol é uma empresa especializada na fabricação de molas para linha branca e automotiva, oferecendo produtos de alta qualidade e serviços a nível nacional.">
+  <meta name="keywords" content="molas, linha branca, molas automotivas, fabricação de molas, produtos metálicos">
+  <meta name="author" content="Bras-Mol">
+
 
   <!-- Favicon -->
   <link rel="icon" href="assets/imagens/Brasmol.png" type="image/png">
 
   <!-- Importação de estilos do Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/header.css"> <!-- Estilo específico do header -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"> -->
+
 </head>
 
 <body>

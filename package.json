@@ -1,0 +1,17 @@
+{
+  "name": "site-brasmol",
+  "version": "1.0.0",
+  "description": "Projeto do site BrasMol",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node minify-images.js"
+  },
+  "dependencies": {
+    "imagemin": "^8.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.0",
+    "imagemin-svgo": "^9.0.0"
+  }
+}

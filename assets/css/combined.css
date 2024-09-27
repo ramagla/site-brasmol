@@ -1,0 +1,770 @@
+.background-fabrica {
+    background-color: #f0f8ff; /* Fundo claro */
+    padding: 50px 0;
+}
+
+.main-container {
+    position: relative;
+    width: 80%; /* Ajuste de acordo com sua preferência */
+    margin: 0 auto; /* Centraliza a linha do tempo */
+}
+
+/* Linha central da linha do tempo */
+.main-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #003366; /* Azul escuro para contrastar */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.text-wrapper {
+    padding: 10px 40px;
+    position: relative;
+    width: 51%;
+    box-sizing: border-box;
+    margin: 50px 0;
+}
+
+.text-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #003366; /* Azul escuro */
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.content {
+    padding: 15px 15px 15px 17px;
+    background-color: #87CEEB; /* Azul claro para contrastar com o header */
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.content h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #212121;
+    letter-spacing: 1px;
+}
+
+.content p {
+    color: #333;
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.timeline-image {
+    width: 80%; /* Reduz a largura para 80% do contêiner */
+    max-width: 300px; /* Define uma largura máxima para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 10px; /* Espaço acima da imagem */
+    border-radius: 4px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    display: block; /* Garante que a imagem seja exibida como um bloco */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+#sobre-nos {
+    padding-top: 170px; /* Mantido do seu código */
+    scroll-margin-top: 80px; /* Ajuste para o tamanho do seu header */ /* Adicionado */
+}
+
+#sobre {    
+    margin-top: auto /* Compensando o deslocamento */
+}
+
+.timeline-image {
+    border: none; /* Remove qualquer borda */
+    box-shadow: none; /* Remove qualquer sombra */
+}
+
+/* Oculta os cards flip em todas as versões */
+.card-container {
+    display: none;
+}
+
+#sobre-nos {
+    scroll-margin-top: 100px; /* Ajuste para o tamanho do seu header */
+}
+
+/* Ajustes para a linha do tempo na versão mobile */
+/* Ajustes para a linha do tempo na versão mobile */
+@media (max-width: 768px) {
+    .main-container {        
+        width: 90%; /* Aumenta a largura para ocupar mais espaço na tela móvel */
+        padding: 0 10px; /* Ajusta o padding para melhor centralização */
+    }
+
+    .main-container::after {
+        display: none; /* Mantém a linha central oculta na versão mobile */
+    }
+
+     .text-wrapper {
+        width: 100%; /* Garante que o texto ocupe a largura total da tela */
+        padding: 5px 10px; /* Ajusta o padding para um melhor espaçamento */
+        margin: 20px 0; /* Ajusta a margem para garantir um espaçamento adequado entre os itens */
+        position: relative;
+        left: 0; /* Garante que o item fique alinhado ao centro na versão mobile */
+    }
+
+    .text-wrapper::after {
+        display: none; /* Oculta o ponto de conexão na versão mobile */
+    }
+
+    .content {
+        padding: 10px; /* Mantém o padding do conteúdo */
+        background-color: #87CEEB; /* Mantém o fundo azul claro */
+        text-align: left; /* Alinha o texto à esquerda para melhor legibilidade */
+        font-size: 14px; /* Mantém o tamanho do texto */
+    }
+
+    .content h3 {
+        font-size: 16px; /* Aumenta um pouco o tamanho do título para melhor destaque */
+    }
+
+    .content p {
+        font-size: 14px; /* Ajusta o tamanho do texto para melhor legibilidade */
+    }
+
+    .timeline-image {
+        width: 45%; /* Ajusta o tamanho da imagem para aproveitar melhor a largura da tela */
+        max-width: 100px; /* Define uma largura máxima */
+        margin: 10px auto; /* Ajusta o espaçamento ao redor da imagem */
+        display: block; /* Garante que a imagem seja exibida como um bloco */
+    }
+    
+    /* Ajusta o título da sessão */
+   #sobre-nos {
+        padding-top: 80px; /* Mantém o ajuste para evitar que o título seja cortado */
+        scroll-margin-top: 80px; /* Ajusta o scroll para a altura do header na versão mobile */
+    }
+
+    .background-fabrica {
+        padding: 20px 0; /* Mantém o padding geral da seção */
+    }
+
+    .right {
+        left: 0; /* Remove o deslocamento dos elementos à direita */
+    }
+}
+
+/* Estilo da Seção da Fábrica */
+.card-container {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Flip Card */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.flip-card-front {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.flip-card-front img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.flip-card-back {
+  background-color: #004268;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.flip-card-back h2 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.flip-card-back p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.flip-card-back img.icons {
+  max-width: 40px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Responsividade para Tablets */
+/* Responsividade iniciando a partir de 768px */
+@media (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem linha quando não houver espaço */
+    justify-content: center; /* Centraliza os cards */
+    gap: 10px; /* Espaçamento entre os cards */
+    padding: 10px; /* Adiciona um padding ao redor da área de cards */
+  }
+
+  .flip-card {
+    width: 150px; /* Ajusta a largura dos cards para ficarem menores */
+    height: 200px; /* Ajusta a altura dos cards para ficarem menores */
+    margin: 5px; /* Adiciona um espaçamento entre os cards */
+  }
+
+  .flip-card-inner {
+    height: 100%; /* Garante que a altura interna ocupe o tamanho total do card */
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; /* Mantém a altura total */
+    padding: 10px;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .flip-card-front img {
+    max-width: 70%; /* Ajusta a imagem para caber melhor no card */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain;
+  }
+
+  .flip-card-back h2 {
+    font-size: 14px; /* Ajusta o tamanho do título */
+    margin: 5px 0;
+  }
+
+  .flip-card-back p {
+    font-size: 12px; /* Ajusta o tamanho do texto */
+    margin: 0;
+    text-align: center;
+  }
+}
+/* footer.css */
+
+/* Estilos Gerais do Rodapé */
+footer {
+  background-color: #02165b; /* Cor de fundo do rodapé */
+  color: #ffffff; /* Cor do texto */
+  padding: 40px 10%; /* Espaçamento interno */
+  font-size: 14px; /* Tamanho da fonte */
+  width: 100%;
+  text-align: left; /* Alinhamento do texto */
+  border: none;
+}
+
+footer ol {
+  list-style: none; /* Remove as marcações da lista */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between; /* Ajusta a distribuição das colunas */
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+  border: none;
+}
+
+footer ol li {
+  margin: 0;
+  flex: 1;
+  min-width: 200px; /* Largura mínima das colunas */
+  margin-bottom: 20px; /* Espaçamento inferior */
+  border: none;
+}
+
+footer ol li h3 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 1px solid #ffffff; /* Adiciona uma linha abaixo do título */
+  padding-bottom: 5px;
+  border: none;
+}
+
+footer ol li a {
+  color: #d0d0d0; /* Cor dos links */
+  text-decoration: none;
+  display: block; /* Links em bloco */
+  margin-bottom: 5px;
+  font-weight: normal;
+  transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+footer ol li a:hover {
+  color: #ffffff; /* Cor ao passar o mouse */
+}
+
+/* Estilos das Redes Sociais */
+footer .social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px; /* Espaçamento entre os ícones */
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  margin-right: 10px;
+}
+
+footer .social-icons img {
+  width: 30px; /* Define um tamanho fixo para os ícones */
+  height: 30px; /* Define a altura fixa para os ícones */
+  transition: transform 0.3s ease; /* Transição ao passar o mouse */
+}
+
+footer .social-icons a:hover img {
+  transform: scale(1.1); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+/* Estilos do Botão WhatsApp */
+footer .wpp {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 70px; /* Aumenta o tamanho do botão */
+  height: 70px; /* Aumenta o tamanho do botão */
+  border-radius: 50%;
+  background: #4caf50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 999; /* Garante que o botão fique acima de outros elementos */
+}
+
+footer .wpp svg {
+  width: 40px; /* Aumenta o ícone do WhatsApp */
+  height: 40px;
+  fill: #ffffff;
+}
+
+footer .wpp:hover {
+  background: #3e8e41; /* Cor de fundo ao passar o mouse */
+}
+
+footer .wpp-text {
+  display: none; /* Inicialmente escondido */
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 14px;
+  position: absolute;
+  right: 80px; /* Ajusta a posição do texto em relação ao botão */
+  bottom: 25px; /* Ajusta a posição do texto em relação ao botão */
+  white-space: nowrap; /* Impede quebra de linha */
+  transition: opacity 0.3s ease;
+  opacity: 0; /* Inicialmente invisível */
+}
+
+footer .wpp:hover .wpp-text {
+  display: block; /* Exibe o texto ao passar o mouse */
+  opacity: 1;
+}
+
+/* Logo no final do rodapé */
+footer #logo2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+footer #logo2 img {
+  width: 120px;
+  height: auto;
+}
+
+footer .end {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+footer .end a,
+footer .end p {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer .end a:hover {
+  text-decoration: underline;
+}
+
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.float:hover {
+  background-color: #128c7e; /* Cor ao passar o mouse */
+}
+
+.my-float {
+  margin-top: 16px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  footer ol {
+    flex-direction: column; /* Colunas empilhadas em telas menores */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  footer ol li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  footer .social-icons {
+    justify-content: center; /* Centraliza os ícones de redes sociais */
+  }
+
+ .float {
+    width: 50px; /* Ajusta o tamanho para versão mobile */
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+  
+  .my-float {
+    margin-top: 12px;
+  }
+
+  footer .social-icons img {
+    width: 25px; /* Ajuste do tamanho dos ícones na versão mobile */
+    height: 25px; /* Ajuste da altura dos ícones na versão mobile */
+  }
+}
+/* assets/css/header.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0; /* Remove margem padrão do body */
+    padding: 0; /* Remove padding padrão do body */
+}
+
+.navbar {
+    background-color: #003366; /* Azul escuro */
+    margin-bottom: 0; /* Remove qualquer margem inferior */
+}
+
+#cabecalho {
+    padding: 0; /* Remove padding interno do cabeçalho */
+}
+
+#cabecalho .nav .nav-link.active {
+    background-color: #fff;
+    color: #003366; /* Cor do texto ativo */
+}
+
+#cabecalho .nav .nav-link,
+.navbar-brand,
+.navbar-brand:hover {
+    color: #fff; /* Cor do texto */
+}
+
+.navbar-toggler {
+    background-color: #fff; /* Cor do botão do menu */
+    margin-top: 0; /* Garante que não há margem superior */
+}
+
+.section-title {
+    font-family: 'Pacifico', cursive;
+}
+
+.text-colored {
+    color: #003366; /* Cor personalizada */
+}
+
+.nav-cardapio .nav-link.active,
+#contato button {
+    background-color: #003366; /* Cor do botão ativo */
+    color: #fff;
+}
+
+.nav-cardapio .nav-link:hover {
+    color: #005bb5; /* Cor ao passar o mouse */
+}
+
+#logo-header {
+    width: 150px; /* Definindo a largura do logo */
+}
+
+@media (max-width: 767px) {
+    .carousel-item img {
+        height: 280px; /* Altura da imagem do carrossel */
+    }
+
+    .navbar-toggler {
+        margin-top: 10px; /* Ajuste o valor conforme necessário */
+    }
+
+    #logo-header {
+    width: 100px; /* Definindo a largura do logo */
+}
+}
+/* Estilo da Seção Principal */
+.inicial {
+    text-align: center;
+    padding-bottom: 0px;
+    margin-top: 0px; /* Garante que não há margem superior */
+}
+
+.inicial h1, .inicial h2 {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.clientes {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.arraste {
+    margin-bottom: 20px;
+}
+
+.watch-sld {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+    gap: 10px;
+}
+
+.watch-sld .slide {
+    flex: 0 0 auto;
+    max-width: 400px;
+    width: 100%;
+    /* Removendo a borda */
+    border: none; 
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.watch-sld img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.watch-sld .slide:hover {
+    transform: scale(1.05);
+}
+
+/* Ajuste apenas para dispositivos móveis */
+@media (max-width: 768px) {
+    .watch-sld .slide {
+        max-width: 80%;
+    }
+}
+/* section-quality.css */
+
+/* Estilo da Seção de Qualidade */
+.quality-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.clientes {
+    text-align: center; /* Centraliza o texto da seção */
+}
+
+.arraste {
+    margin-bottom: 20px; /* Espaço entre o texto e as imagens */
+}
+
+
+
+.watch-slider {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 10px;
+    scroll-behavior: smooth;
+    gap: 10px;
+}
+
+.watch-slider .slide {
+    flex: 0 0 auto;
+    max-width: 400px; /* Ajustar o tamanho máximo das imagens */
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.watch-slider img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Ajuste apenas para dispositivos móveis */
+@media (max-width: 768px) {
+    img {
+        width: auto; /* Permite que a largura das imagens se ajuste automaticamente */
+        max-width: 100%; /* Garante que as imagens não excedam a largura do seu contêiner */
+        height: auto; /* Mantém a proporção das imagens */
+    }
+
+    .watch-slider .slide {
+        max-width: 150%; /* Ajusta a largura dos slides conforme necessário */
+    }
+}
+
+/* references.css */
+
+/* Estilos Básicos da Seção */
+.referencias {
+  padding: 40px 0; /* Espaçamento interno da seção */
+  text-align: center; /* Centraliza o título */
+  background-color: #f9f9f9; /* Cor de fundo */
+}
+
+.referencias h2 {
+  font-size: 24px;
+  color: #02165b;
+  margin-bottom: 30px; /* Adiciona um espaçamento abaixo do título */
+  font-weight: bold;
+}
+
+/* Carrossel de Logotipos (Slick Carousel) */
+.logo-carousel {
+  width: 80%; /* Largura do carrossel */
+  margin: 0 auto; /* Centraliza o carrossel */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px; /* Espaçamento entre os logos */
+}
+
+.logo-carousel div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.logo-carousel img {
+  max-width: 150px; /* Tamanho máximo das imagens */
+  height: auto; /* Mantém a proporção das imagens */
+  transition: transform 0.3s ease-in-out; /* Transição suave ao passar o mouse */
+}
+
+.logo-carousel img:hover {
+  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Ocultando os botões padrão do slick-carousel */
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo-carousel img {
+    max-width: 100px; /* Ajusta o tamanho das imagens em dispositivos menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-carousel {
+    flex-direction: column; /* Organiza os logos em uma única coluna */
+  }
+
+  .logo-carousel div {
+    margin: 5px 0;
+  }
+
+  .referencias h2 {
+    font-size: 18px;
+  }
+}

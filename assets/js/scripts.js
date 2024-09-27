@@ -1,102 +1,124 @@
 $(function () {
-  function atualizar_informacoes() {
-    $("#watch-name").text($(".slick-center").data("name"));
-  }
+    function atualizar_informacoes() {
+        $("#watch-name").text($(".slick-center").data("name"));
+    }
 
-  $(".watch-slider").on("init", function () {
-    atualizar_informacoes();
-  });
+    $(".watch-slider").on("init", function () {
+        atualizar_informacoes();
+    });
 
-  $(".watch-slider").slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    prevArrow: $("#arrow-prev"),
-    nextArrow: $("#arrow-next"),
-    responsive: [
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  });
+    $(".watch-slider").slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        prevArrow: $("#arrow-prev"),
+        nextArrow: $("#arrow-next"),
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+        ],
+    });
 
-  $(".watch-slider").on("afterChange", function () {
-    atualizar_informacoes();
-  });
+    $(".watch-slider").on("afterChange", function () {
+        atualizar_informacoes();
+    });
 });
 
 $(document).ready(function () {
-  $(".logo-carousel").slick({
-    dots: false, // Remover indicadores de página
-    infinite: true, // Loop infinito
-    speed: 1000, // Velocidade da transição em milissegundos
-    slidesToShow: 5, // Número de slides visíveis por vez (ajuste conforme necessário)
-    slidesToScroll: 1, // Número de slides para rolar por vez
-    autoplay: true, // Iniciar automaticamente
-    autoplaySpeed: 3000, // Tempo entre cada slide em milissegundos
-    responsive: [
-      // Configurações responsivas para diferentes tamanhos de tela
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  });
+    $(".logo-carousel").slick({
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                },
+            },
+        ],
+    });
 });
 
 function expandImage(img) {
-        // Cria um elemento de imagem grande
-        const expandedImg = document.createElement("img");
-        expandedImg.src = img.src; // Define a fonte da imagem
-        expandedImg.style.position = "fixed"; // Fixa a imagem na tela
-        expandedImg.style.top = "50%"; // Centraliza verticalmente
-        expandedImg.style.left = "50%"; // Centraliza horizontalmente
-        expandedImg.style.transform = "translate(-50%, -50%)"; // Ajusta o posicionamento
-        expandedImg.style.width = "80%"; // Define a largura da imagem expandida
-        expandedImg.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)"; // Adiciona sombra
+    const expandedImg = document.createElement("img");
+    expandedImg.src = img.src;
+    expandedImg.style.position = "fixed";
+    expandedImg.style.top = "50%";
+    expandedImg.style.left = "50%";
+    expandedImg.style.transform = "translate(-50%, -50%)";
+    expandedImg.style.width = "80%";
+    expandedImg.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
 
-        // Adiciona um evento para fechar a imagem ao clicar
-        expandedImg.onclick = function() {
-            document.body.removeChild(expandedImg); // Remove a imagem expandida
-        }
+    expandedImg.onclick = function () {
+        document.body.removeChild(expandedImg);
+    };
 
-        document.body.appendChild(expandedImg); // Adiciona a imagem ao corpo do documento
-    }
+    document.body.appendChild(expandedImg);
+}
 
-
-  $(document).ready(function() {
-    // Adiciona a classe 'active' ao link do menu quando é clicado
-    $('.nav-link').on('click', function() {
-      $('.nav-link').removeClass('active');
-      $(this).addClass('active');
-    });
-
-    // Aplica a classe 'active' ao link correspondente ao carregar a página
-    var currentLocation = window.location.href;
-    $('.nav-link').each(function() {
-      if (this.href === currentLocation) {
+$(document).ready(function () {
+    $('.nav-link').on('click', function () {
+        $('.nav-link').removeClass('active');
         $(this).addClass('active');
-      }
     });
-  });
 
+    var currentLocation = window.location.href;
+    $('.nav-link').each(function () {
+        if (this.href === currentLocation) {
+            $(this).addClass('active');
+        }
+    });
+});
 
+$(window).on('load', function () {
+    console.log("Verificando a presença do(s) elemento(s) .watch-sld após o carregamento da página:", $(".watch-sld").length);
 
+    if ($(".watch-sld").length > 0) {
+        $(".watch-sld").each(function (index, element) {
+            console.log("Inicializando o Slick Slider para o elemento .watch-sld de índice:", index);
+            $(element).slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                centerMode: true,
+                prevArrow: false,
+                nextArrow: false,
+                responsive: [
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            slidesToShow: 2,
+                        },
+                    },
+                ],
+            });
+        });
+        console.log("Slick Slider foi inicializado com sucesso para todos os elementos .watch-sld");
+    } else {
+        console.error("Nenhum elemento .watch-sld foi encontrado no DOM");
+    }
+});

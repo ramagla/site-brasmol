@@ -1,3 +1,13 @@
+<div id="cache-banner" class="alert alert-info text-center position-fixed w-100" style="bottom: 0; z-index: 1050;">
+    <span>
+        Utilizamos cookies e cache para garantir que você tenha a melhor experiência em nosso site.
+        <a href="https://servidor-estaticos-teal-ten.vercel.app/politica_de_privacidade.pdf" target="_blank">Saiba mais</a>.
+    </span>
+    <button type="button" class="btn btn-primary btn-sm ms-2" onclick="aceitarCache()">Aceitar</button>
+</div>
+
+
+
 <footer id="rodape">
     <ol>
         <li>
@@ -59,5 +69,16 @@
     if (currentYearElement) {
         var currentYear = new Date().getFullYear();
         currentYearElement.textContent = currentYear;
+    }
+
+    // Função para aceitar o uso de cookies e cache e ocultar o banner
+    function aceitarCache() {
+        document.getElementById('cache-banner').style.display = 'none';
+        localStorage.setItem('cacheAccepted', 'true'); // Armazena a aceitação no localStorage
+    }
+
+    // Verifica se o usuário já aceitou o uso de cookies e cache
+    if (localStorage.getItem('cacheAccepted') === 'true') {
+        document.getElementById('cache-banner').style.display = 'none';
     }
 </script>
