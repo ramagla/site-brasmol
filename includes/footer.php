@@ -6,8 +6,6 @@
     <button type="button" class="btn btn-primary btn-sm ms-2" onclick="aceitarCache()">Aceitar</button>
 </div>
 
-
-
 <footer id="rodape">
     <ol>
         <li>
@@ -71,14 +69,13 @@
         currentYearElement.textContent = currentYear;
     }
 
-    // Função para aceitar o uso de cookies e cache e ocultar o banner
     function aceitarCache() {
         document.getElementById('cache-banner').style.display = 'none';
-        localStorage.setItem('cacheAccepted', 'true'); // Armazena a aceitação no localStorage
-    }
+        localStorage.setItem('cacheAccepted', 'true');
 
-    // Verifica se o usuário já aceitou o uso de cookies e cache
-    if (localStorage.getItem('cacheAccepted') === 'true') {
-        document.getElementById('cache-banner').style.display = 'none';
+
+        if (localStorage.getItem('cacheAccepted') === 'true') {
+            document.getElementById('cache-banner').style.display = 'none';
+        }
     }
 </script>
